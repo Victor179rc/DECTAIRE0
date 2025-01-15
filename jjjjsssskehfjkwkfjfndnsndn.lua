@@ -1,6 +1,4 @@
-gg.alert('Script em manutenção')
-
---[[function YMsmKYfhmzRgkDRaRppnyJSxeqGvBLCiQIOXhz(c)
+function YMsmKYfhmzRgkDRaRppnyJSxeqGvBLCiQIOXhz(c)
 tab={}
 for i = 1,#c do
 x=string.len(c[i]) 
@@ -545,7 +543,7 @@ menu = gg.choice({YMsmKYfhmzRgkDRaRppnyJSxeqGvBLCiQIOXhz({'%%%%%%%%%%%%%%%%%%%%%
 if menu == 1 then os.exit()
 elseif menu == 2 then gg.hideUiButton()
 elseif menu == 3 then iiiijjgddvjgstar()
-end]]--
+end
 end
 while true do
 if gg.isVisible (false) then
