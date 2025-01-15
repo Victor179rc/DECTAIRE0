@@ -1,6 +1,6 @@
 -- Teste
 
-functio YMsmKYfhmzRgkDRaRppnyJSxeqGvBLCiQIOXhz(c)
+function YMsmKYfhmzRgkDRaRppnyJSxeqGvBLCiQIOXhz(c)
 tab={}
 for i = 1,#c do
 x=string.len(c[i]) 
