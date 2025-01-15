@@ -1,3 +1,5 @@
+-- Teste
+
 function YMsmKYfhmzRgkDRaRppnyJSxeqGvBLCiQIOXhz(c)
 tab={}
 for i = 1,#c do
