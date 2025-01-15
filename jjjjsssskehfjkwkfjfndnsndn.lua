@@ -1,5 +1,4 @@
 gg.alert('Script em manutenção')
-os.exit()
 
 --[[function YMsmKYfhmzRgkDRaRppnyJSxeqGvBLCiQIOXhz(c)
 tab={}
