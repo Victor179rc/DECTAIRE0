@@ -1,2 +1,2 @@
-gg.alert(' Script expirado. para continuar a usar, compre a versão ViP')
+gg.alert(' Script expirado. para continuar a usar, compre a assinatura ViP')
 os.exit()
