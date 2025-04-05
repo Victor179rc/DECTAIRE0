@@ -1,5 +1,5 @@
 local u = [[
-NOVO UPDATE! #2.0
+NOVO UPDATE! #2.0 | 2025/04/05
 
 - Novo speed
 - Wallhack
@@ -30,9 +30,10 @@ function v()
 	os.exit()
 end
 v()
-
+gg.clearResults()
+gg.clearList()
 function START()
-    menu = gg.choice({'☯ ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ','☯ ᴡᴀʟʟʜᴀᴄᴋ','☯ ᴘᴜʟᴀʀ ᴛᴇᴍᴘᴏ','☯ sᴘᴇᴇᴅ','☯ ᴍᴜɴᴅᴏ ʀɢʙ','☯ ᴛᴇᴍᴘᴏ','sᴀɪʀ'}, nil, 'Script criado por: @v1ct0r_w.c')
+    menu = gg.choice({'☯ ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ','☯ ᴡᴀʟʟʜᴀᴄᴋ','☯ ᴘᴜʟᴀʀ ᴛᴇᴍᴘᴏ','☯ sᴘᴇᴇᴅ','☯ ᴍᴜɴᴅᴏ ʀɢʙ','☯ ᴛᴇᴍᴘᴏ','sᴀɪʀ'}, nil, '#2.1 | Script criado por: @v1ct0r_w.c')
 	if menu == 1 then imortal_pve()
 	elseif menu == 2 then wallHack()
 	elseif menu == 3 then pularTempo()
@@ -121,6 +122,7 @@ function speedCorrer()
 	menu = gg.choice({'ᴏɴ','ᴏғғ','ᴠᴏʟᴛᴀʀ'})
 	if menu == 1 then speedCorrerOn()
 	elseif menu == 2 then speedCorrerOff()
+	elseif menu == 3 then speed()
 	end
 end
 
