@@ -1,5 +1,5 @@
 local u = [[
-NOVO UPDATE! #2.0 | 2025/04/05
+NOVO UPDATE! #2.1 | 2025/04/05
 
 - Novo speed
 - Wallhack
