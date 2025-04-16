@@ -1,45 +1,38 @@
+-- ᣃ☠☠ᣄ
 local u = [[
-NOVO UPDATE! #2.1 | 2025/04/05
+NOVO UPDATE! #3.0 | 2025/04/16
 
-- Novo speed
-- Wallhack
-- Mundo RGB
-- Tempo dia/noite
+- Nova opção "ᴇᴅɪᴛᴀʀ" em "sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ"
+- Novo símbolo "☠" adicionado nas opções
+- Opção "ᴛᴇᴍᴘᴏ" foi retirado
+- Menu de senha desativado
 
 Compre gemas, kills, chaves etc.👇
 - Instagram: @v1ct0r_w.c]]
-local s = 'wc'
+local s = {'☠ ',' ☠'}
 local c = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
-
-function v()
-	for i = 1, 3 do
-	    local entradaSenha = gg.prompt({'Digite a senha para usar a script:'}, nil, {'text'})
-	    if entradaSenha ~= nil and entradaSenha[1] == s then
-	        local New = gg.alert(u,'Ok','Copiar link')
-			if New == 1 then gg.hideUiButton()
-			elseif New == 2 then gg.copyText(c) gg.alert('Cole o link no navegador')
-			end
-			return
-		else
-			local erro = gg.alert('Senha incorreta. Você tem ' .. (3 - i) .. '/3 tentativas', 'Sair', 'Ok')
-			if erro == 1 then os.exit()
-			elseif erro == 2 then gg.hideUiButton()
-			end
-	    end
-	end
-	os.exit()
-end
-v()
+local New = gg.alert(u,'Ok','Copiar link')
+if New == 1 then gg.hideUiButton() end
+if New == 2 then gg.copyText(c) gg.alert('Cole o link no navegador') end
 gg.clearResults()
 gg.clearList()
+
 function START()
-    menu = gg.choice({'☯ ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ','☯ ᴡᴀʟʟʜᴀᴄᴋ','☯ ᴘᴜʟᴀʀ ᴛᴇᴍᴘᴏ','☯ sᴘᴇᴇᴅ','☯ ᴍᴜɴᴅᴏ ʀɢʙ','☯ ᴛᴇᴍᴘᴏ','sᴀɪʀ'}, nil, '#2.1 | Script criado por: @v1ct0r_w.c')
+    menu = gg.choice({
+s[1]..'ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ'..s[2],
+s[1]..'ᴡᴀʟʟʜᴀᴄᴋ'..s[2],
+s[1]..'ᴘᴜʟᴀʀ ᴛᴇᴍᴘᴏ'..s[2],
+s[1]..'sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ'..s[2],
+s[1]..'sᴘᴇᴇᴅ ɢʟᴏʙᴀʟ'..s[2],
+s[1]..'ᴍᴜɴᴅᴏ ʀɢʙ'..s[2],
+s[1]..'sᴀɪʀ'..s[2]},
+nil, '#3.0 | Script criado por: @v1ct0r_w.c')
 	if menu == 1 then imortal_pve()
 	elseif menu == 2 then wallHack()
 	elseif menu == 3 then pularTempo()
-	elseif menu == 4 then speed()
-	elseif menu == 5 then rgb()
-	elseif menu == 6 then tempo()
+	elseif menu == 4 then speedCorrer()
+	elseif menu == 5 then speedGlobal()
+	elseif menu == 6 then rgb()
 	elseif menu == 7 then os.exit()
 	end
 end
@@ -99,7 +92,7 @@ function pularTempo()
 	elseif menu == 3 then gg.timeJump(43200)
 	elseif menu == 4 then gg.timeJump(86400)
 	elseif menu == 5 then 
-		local edit = gg.prompt({'⏰Os valores são medidos por segundos. Exemplo: 1 hora = 3600 segundos'}, {3600}, {'number'})
+		edit = gg.prompt({'⏰Os valores são medidos por segundos. Exemplo: 1 hora = 3600 segundos'}, {3600}, {'number'})
 		if edit and edit[1] and tonumber(edit[1]) then
 			gg.timeJump(tonumber(edit[1]))
 		else
@@ -110,19 +103,12 @@ function pularTempo()
 	end
 end
 
-function speed()
-	menu = gg.choice({'sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ','sᴘᴇᴇᴅ ɢʟᴏʙᴀʟ (Offline)','ᴠᴏʟᴛᴀʀ'})
-	if menu == 1 then speedCorrer()
-	elseif menu == 2 then speedGlobal()
-	elseif menu== 3 then START()
-	end
-end
-
 function speedCorrer()
-	menu = gg.choice({'ᴏɴ','ᴏғғ','ᴠᴏʟᴛᴀʀ'})
+	menu = gg.choice({'ᴏɴ','ᴏғғ','ᴇᴅɪᴛᴀʀ','ᴠᴏʟᴛᴀʀ'})
 	if menu == 1 then speedCorrerOn()
 	elseif menu == 2 then speedCorrerOff()
-	elseif menu == 3 then speed()
+	elseif menu == 3 then speedCorrerEdit()
+	elseif menu == 4 then START()
 	end
 end
 
@@ -136,12 +122,17 @@ function speedCorrerOn()
 end
 
 function speedCorrerOff()
-	gg.setRanges(gg.REGION_C_ALLOC)
-	gg.searchNumber('1.89999997616F;3.79999995232F:17',gg.TYPE_FLOAT)
-	gg.refineNumber('1.89999997616',gg.TYPE_FLOAT)
+	pesquisar(gg.REGION_C_ALLOC, '1.89999997616F;3.79999995232F:17', gg.TYPE_FLOAT, '1.89999997616',gg.TYPE_FLOAT)
 	local R = gg.getResults(10)
 	BaseMenos(R, 0xC0, '1.5', gg.TYPE_FLOAT, true)
 	desativado()
+end
+
+function speedCorrerEdit()
+	pesquisar(gg.REGION_C_ALLOC, '1.89999997616F;3.79999995232F:17', gg.TYPE_FLOAT, '1.89999997616',gg.TYPE_FLOAT)
+	local R = gg.getResults(10)
+	input = gg.prompt({'Qual velocidade você quer?'}, nil, {'number'})
+	BaseMenos(R, 0xC0, input[1] + 0.111, gg.TYPE_FLOAT, true)
 end
 
 function speedGlobal()
@@ -150,7 +141,7 @@ function speedGlobal()
 	elseif menu == 2 then gg.setSpeed(5)
 	elseif menu == 3 then gg.setSpeed(10)
 	elseif menu == 4 then gg.setSpeed(50)
-	elseif menu == 5 then speed()
+	elseif menu == 5 then START()
 	end
 end
 
@@ -187,15 +178,15 @@ function tempo()
 end
 
 function tempoDia()
-	pesquisar(gg.REGION_C_ALLOC, '6F;21F:17', gg.TYPE_FLOAT, '6', gg.TYPE_FLOAT)
+	pesquisar(gg.REGION_C_ALLOC, '288233954919789363', gg.TYPE_QWORD, '288233954919789363', gg.TYPE_QWORD)
 	local R = gg.getResults(4)
-	BaseMenos(R, 0x70, '999', gg.TYPE_FLOAT, true)
+	BaseMenos(R, 0x1E0, '0', gg.TYPE_FLOAT, true)
 end
 
 function tempoNoite()
-	pesquisar(gg.REGION_C_ALLOC, '6F;21F:17', gg.TYPE_FLOAT, '6', gg.TYPE_FLOAT)
+	pesquisar(gg.REGION_C_ALLOC, '288233954919789363', gg.TYPE_QWORD, '288233954919789363', gg.TYPE_QWORD)
 	local R = gg.getResults(4)
-	BaseMenos(R, 0x70, '0', gg.TYPE_FLOAT, true)
+	BaseMenos(R, 0x1E0, '0', gg.TYPE_FLOAT, true)
 end
 -- BASE
 function BaseMais(result, offset, valor, flagss, congelar)
