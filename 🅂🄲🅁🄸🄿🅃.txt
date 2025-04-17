@@ -131,8 +131,12 @@ end
 function speedCorrerEdit()
 	pesquisar(gg.REGION_C_ALLOC, '1.89999997616F;3.79999995232F:17', gg.TYPE_FLOAT, '1.89999997616',gg.TYPE_FLOAT)
 	local R = gg.getResults(10)
-	input = gg.prompt({'Qual velocidade você quer?'}, nil, {'number'})
-	BaseMenos(R, 0xC0, input[1] + 0.111, gg.TYPE_FLOAT, true)
+	input = gg.prompt({'Qual velocidade você quer?'}, {'1'}, {'number'})
+	if input ~= nil then
+		BaseMenos(R, 0xC0, input[1] + 0.111, gg.TYPE_FLOAT, true)
+	else
+		gg.alert('Entrada inválida! Insira um número valido.')
+	end
 end
 
 function speedGlobal()
