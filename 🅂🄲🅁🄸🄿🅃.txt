@@ -2,10 +2,7 @@
 local u = [[
 NOVO UPDATE! #3.1 | 2025/04/20
 
-- Nova opção "ᴇᴅɪᴛᴀʀ" em "sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ"
-- Novo símbolo "☠" adicionado nas opções
-- Opção "ᴛᴇᴍᴘᴏ" foi retirado
-- Menu de senha desativado
+- Nova opção de personalização de bordas
 
 Compre gemas, kills, chaves etc.👇
 - Instagram: @v1ct0r_w.c]]
