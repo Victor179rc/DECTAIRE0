@@ -1,6 +1,6 @@
 -- ᣃ☠☠ᣄ
 local u = [[
-NOVO UPDATE! #3.0 | 2025/04/16
+NOVO UPDATE! #3.1 | 2025/04/20
 
 - Nova opção "ᴇᴅɪᴛᴀʀ" em "sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ"
 - Novo símbolo "☠" adicionado nas opções
@@ -9,31 +9,45 @@ NOVO UPDATE! #3.0 | 2025/04/16
 
 Compre gemas, kills, chaves etc.👇
 - Instagram: @v1ct0r_w.c]]
-local s = {'☠ ',' ☠'}
-local c = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
+local url = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
 local New = gg.alert(u,'Ok','Copiar link')
 if New == 1 then gg.hideUiButton() end
-if New == 2 then gg.copyText(c) gg.alert('Cole o link no navegador') end
+if New == 2 then gg.copyText(url) gg.alert('Cole o link no navegador') end
 gg.clearResults()
 gg.clearList()
 
+local borda = {'☠ ',' ☠'}
+
+function personalizar()
+	local input = gg.prompt({'Borda Esquerda:', 'Borda direita:'}, {borda[1], borda[2]}, {'text', 'text'})
+	if input == nil then
+		gg.toast('Cancelado')
+	else
+		borda = {input[1]..' ',' '..input[2]}
+	end
+	START()
+end
 function START()
     menu = gg.choice({
-s[1]..'ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ'..s[2],
-s[1]..'ᴡᴀʟʟʜᴀᴄᴋ'..s[2],
-s[1]..'ᴘᴜʟᴀʀ ᴛᴇᴍᴘᴏ'..s[2],
-s[1]..'sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ'..s[2],
-s[1]..'sᴘᴇᴇᴅ ɢʟᴏʙᴀʟ'..s[2],
-s[1]..'ᴍᴜɴᴅᴏ ʀɢʙ'..s[2],
-s[1]..'sᴀɪʀ'..s[2]},
-nil, '#3.0 | Script criado por: @v1ct0r_w.c')
+		borda[1]..'ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ'..borda[2],
+		borda[1]..'ᴡᴀʟʟʜᴀᴄᴋ'..borda[2],
+		borda[1]..'ᴘᴜʟᴀʀ ᴛᴇᴍᴘᴏ'..borda[2],
+		borda[1]..'sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ'..borda[2],
+		borda[1]..'sᴘᴇᴇᴅ ɢʟᴏʙᴀʟ'..borda[2],
+		borda[1]..'ᴍᴜɴᴅᴏ ʀɢʙ'..borda[2],
+		borda[1]..'ᴘᴇʀsᴏɴᴀʟɪᴢᴀʀ ʙᴏʀᴅᴀs'..borda[2],
+		borda[1]..'sᴀɪʀ'..borda[2]
+	}, nil, '#3.1 | Script criado por: @v1ct0r_w.c')
+	
 	if menu == 1 then imortal_pve()
 	elseif menu == 2 then wallHack()
 	elseif menu == 3 then pularTempo()
 	elseif menu == 4 then speedCorrer()
 	elseif menu == 5 then speedGlobal()
 	elseif menu == 6 then rgb()
-	elseif menu == 7 then os.exit()
+	elseif menu == 7 then personalizar()
+	elseif menu == 8 then os.exit()
+	elseif menu == nil then gg.hideUiButton()
 	end
 end
 
@@ -117,25 +131,26 @@ function speedCorrerOn()
 	gg.searchNumber('1.89999997616F;3.79999995232F:17',gg.TYPE_FLOAT)
 	gg.refineNumber('1.89999997616',gg.TYPE_FLOAT)
 	local R = gg.getResults(10)
-	BaseMenos(R, 0xC0, 99, gg.TYPE_FLOAT, true)
+	BaseMenos(R, 0xC0, 999.1, gg.TYPE_FLOAT, true)
 	ativado()
 end
 
 function speedCorrerOff()
 	pesquisar(gg.REGION_C_ALLOC, '1.89999997616F;3.79999995232F:17', gg.TYPE_FLOAT, '1.89999997616',gg.TYPE_FLOAT)
 	local R = gg.getResults(10)
-	BaseMenos(R, 0xC0, '1.5', gg.TYPE_FLOAT, true)
+	BaseMenos(R, 0xC0, 1.5, gg.TYPE_FLOAT, true)
 	desativado()
 end
 
 function speedCorrerEdit()
+input = gg.prompt({'Qual velocidade você quer?'}, {'1'}, {'number'})
+	if input and input[1] and tonumber(input[1]) then
 	pesquisar(gg.REGION_C_ALLOC, '1.89999997616F;3.79999995232F:17', gg.TYPE_FLOAT, '1.89999997616',gg.TYPE_FLOAT)
 	local R = gg.getResults(10)
-	input = gg.prompt({'Qual velocidade você quer?'}, {'1'}, {'number'})
-	if input ~= nil then
-		BaseMenos(R, 0xC0, input[1] + 0.111, gg.TYPE_FLOAT, true)
+		BaseMenos(R, 0xC0, tonumber(input[1]) + 0.111, gg.TYPE_FLOAT, true)
 	else
 		gg.alert('Entrada inválida! Insira um número valido.')
+		speedCorrer()
 	end
 end
 
