@@ -5,8 +5,11 @@ NOVO UPDATE! #3.1 | 2025/04/20
 - Nova opção de personalização de bordas
 
 Compre gemas, kills, chaves etc.👇
-- Instagram: Conta desativada temporariamente]]
-local New = gg.alert(u)
+- Instagram: @v1ct0r_w.c]]
+local url = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
+local New = gg.alert(u,'Ok','Copiar link')
+	if New == 1 then gg.hideUiButton() end
+	if New == 2 then gg.copyText(url) gg.alert('Cole o link no navegador') end
 gg.clearResults()
 gg.clearList()
 
