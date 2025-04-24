@@ -1,5 +1,271 @@
-local Alerta = [[
-Recentemente, descobri que alguém encontrou uma maneira de acessar o código do meu script e está vazando-o por aí. No entanto, isso não me incomoda tanto, pois o código afeta apenas os mobs do jogo e não interfere na jogabilidade dos jogadores no PvP.
+-- ᣃ☠☠ᣄ
 
-Contudo, se eu descobrir quem está vazando o código, pagarei ao Mox para deletar permanentemente a conta dessa pessoa no servidor da TurboRocket. Portanto, se você tem acesso ao código, evite compartilhá-lo com outras pessoas se não quiser ter sua conta apagada.]]
-gg.alert(Alerta)
+local u = [[
+NOVO UPDATE! #3.1 | 2025/04/20
+
+- Nova opção de personalização de bordas
+
+Compre gemas, kills, chaves etc.👇
+- Instagram: @v1ct0r_w.c]]
+local url = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
+local New = gg.alert(u,'Ok','Copiar link')
+	if New == 1 then gg.hideUiButton() end
+	if New == 2 then gg.copyText(url) gg.alert('Cole o link no navegador') end
+
+local borda = {'☠ ',' ☠'}
+
+function personalizar()
+	local input = gg.prompt({'Borda Esquerda:', 'Borda direita:'}, {borda[1], borda[2]}, {'text', 'text'})
+	if input == nil then
+		gg.toast('Cancelado')
+	else
+		borda = {input[1]..' ',' '..input[2]}
+	end
+	START()
+end
+gg.clearResults()
+gg.clearList()
+function START()
+    menu = gg.choice({
+		borda[1]..'ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ'..borda[2],
+		borda[1]..'ᴡᴀʟʟʜᴀᴄᴋ'..borda[2],
+		borda[1]..'ᴘᴜʟᴀʀ ᴛᴇᴍᴘᴏ'..borda[2],
+		borda[1]..'sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ'..borda[2],
+		borda[1]..'sᴘᴇᴇᴅ ɢʟᴏʙᴀʟ'..borda[2],
+		borda[1]..'ᴍᴜɴᴅᴏ ʀɢʙ'..borda[2],
+		borda[1]..'ᴘᴇʀsᴏɴᴀʟɪᴢᴀʀ ʙᴏʀᴅᴀs'..borda[2],
+		borda[1]..'sᴀɪʀ'..borda[2]
+	}, nil, '#3.1 | Script criado por: @v1ct0r_w.c')
+	
+	if menu == 1 then imortalPve()
+	elseif menu == 2 then wallHack()
+	elseif menu == 3 then pularTempo()
+	elseif menu == 4 then speedCorrer()
+	elseif menu == 5 then speedGlobal()
+	elseif menu == 6 then rgb()
+	elseif menu == 7 then personalizar()
+	elseif menu == 8 then os.exit()
+	elseif menu == nil then gg.hideUiButton()
+	end
+end
+
+function imortalPve()
+	menu = gg.choice({'ᴏɴ','ᴏғғ','ᴠᴏʟᴛᴀʀ'}, nil, 'Essa função funciona somente contra Mobs')
+	if menu == 1 then imortalPve_On()
+	elseif menu == 2 then imortalPve_Off()
+	elseif menu == 3 then START()
+	end
+end
+
+function imortalPve_On()
+	gg.setRanges(gg.REGION_C_ALLOC)
+	gg.searchNumber('2.40000009537',gg.TYPE_FLOAT)
+	gg.refineAddress('F0', -1, gg.TYPE_FLOAT, gg.SIGN_EQUAL, 0, -1, 0)
+	local R = gg.getResults(20)
+	BaseMais(R, 0x120, -999, gg.TYPE_FLOAT, true)
+	ativado()
+end
+
+function imortalPve_Off()
+	gg.setRanges(gg.REGION_C_ALLOC)
+	gg.searchNumber('2.40000009537',gg.TYPE_FLOAT)
+	gg.refineAddress('F0', -1, gg.TYPE_FLOAT, gg.SIGN_EQUAL, 0, -1, 0)
+	local R = gg.getResults(20)
+	BaseMais(R, 0x120, 1, gg.TYPE_FLOAT, true)
+	desativado()
+end
+
+function wallHack()
+	menu = gg.choice({'ᴏɴ','ᴏғғ','ᴠᴏʟᴛᴀʀ'})
+	if menu == 1 then wallhackOn()
+	elseif menu == 2 then wallhackOff()
+	elseif menu == 3 then START()
+	end
+end
+
+function wallhackOn()
+	pesquisar(gg.REGION_C_ALLOC,'-1,549,174,190', gg.TYPE_DWORD, '-1,549,174,190', gg.TYPE_DWORD)
+	local R = gg.getResults(5)
+	BaseMais(R, 0x8, '0', gg.TYPE_QWORD, true)
+	ativado()
+end
+
+function wallhackOff()
+	pesquisar(gg.REGION_C_ALLOC,'-1,549,174,190', gg.TYPE_DWORD, '-1,549,174,190', gg.TYPE_DWORD)
+	local R = gg.getResults(5)
+	BaseMais(R, 0x8, '7,813,537,966,696,955,904', gg.TYPE_QWORD, true)
+	desativado()
+end
+
+function pularTempo()
+	menu = gg.choice({'1h','5h','12h','24h','ᴇᴅɪᴛᴀʀ','ᴠᴏʟᴛᴀʀ'}, nil, 'Use essa função para pular o tempo das missões do jogo')
+	if menu == 1 then gg.timeJump(3600)
+	elseif menu == 2 then gg.timeJump(18000)
+	elseif menu == 3 then gg.timeJump(43200)
+	elseif menu == 4 then gg.timeJump(86400)
+	elseif menu == 5 then 
+		edit = gg.prompt({'⏰Os valores são medidos por segundos. Exemplo: 1 hora = 3600 segundos'}, {3600}, {'number'})
+		if edit and edit[1] and tonumber(edit[1]) then
+			gg.timeJump(tonumber(edit[1]))
+		else
+			gg.alert('Entrada inválida! Insira um número valido.')
+			pularTempo()
+		end
+	elseif menu == 6 then START()
+	end
+end
+
+function speedCorrer()
+	menu = gg.choice({'ᴏɴ','ᴏғғ','ᴇᴅɪᴛᴀʀ','ᴠᴏʟᴛᴀʀ'})
+	if menu == 1 then speedCorrerOn()
+	elseif menu == 2 then speedCorrerOff()
+	elseif menu == 3 then speedCorrerEdit()
+	elseif menu == 4 then START()
+	end
+end
+
+function speedCorrerOn()
+	pesquisar(gg.REGION_C_ALLOC, '1.89999997616F;3.79999995232F:17',gg.TYPE_FLOAT, '1.89999997616',gg.TYPE_FLOAT)
+	local R = gg.getResults(10)
+	BaseMenos(R, 0xC0, 999.1, gg.TYPE_FLOAT, true)
+	ativado()
+end
+
+function speedCorrerOff()
+	pesquisar(gg.REGION_C_ALLOC, '1.89999997616F;3.79999995232F:17', gg.TYPE_FLOAT, '1.89999997616',gg.TYPE_FLOAT)
+	local R = gg.getResults(10)
+	BaseMenos(R, 0xC0, 1.5, gg.TYPE_FLOAT, true)
+	desativado()
+end
+
+function speedCorrerEdit()
+input = gg.prompt({'Qual velocidade você quer?'}, {'1'}, {'number'})
+	if input and input[1] and tonumber(input[1]) then
+	pesquisar(gg.REGION_C_ALLOC, '1.89999997616F;3.79999995232F:17', gg.TYPE_FLOAT, '1.89999997616',gg.TYPE_FLOAT)
+	local R = gg.getResults(10)
+		BaseMenos(R, 0xC0, tonumber(input[1]) + 0.111, gg.TYPE_FLOAT, true)
+	else
+		gg.alert('Entrada inválida! Insira um número valido.')
+		speedCorrer()
+	end
+end
+
+function speedGlobal()
+	menu = gg.choice({'1x','5x','10x','50x','ᴠᴏʟᴛᴀʀ'}, nil, '10x e 50x pode causar bug ao sair do mapa')
+	if menu == 1 then gg.setSpeed(1)
+	elseif menu == 2 then gg.setSpeed(5)
+	elseif menu == 3 then gg.setSpeed(10)
+	elseif menu == 4 then gg.setSpeed(50)
+	elseif menu == 5 then START()
+	end
+end
+
+function rgb()
+	menu = gg.choice({'ᴏɴ','ᴏғғ','ᴠᴏʟᴛᴀʀ'})
+	if menu == 1 then rgbOn()
+	elseif menu == 2 then rgbOff()
+	elseif menu == 3 then START()
+	end
+end
+
+function rgbOn()
+	pesquisar(gg.REGION_CODE_APP, '128F;255F', gg.TYPE_FLOAT, '255', gg.TYPE_FLOAT)
+	gg.getResults(5)
+	gg.editAll('9,999,777', gg.TYPE_FLOAT)
+	gg.clearResults()
+	ativado()
+end
+
+function rgbOff()
+pesquisar(gg.REGION_CODE_APP, '9,999,777', gg.TYPE_FLOAT, '9,999,777', gg.TYPE_FLOAT)
+	gg.getResults(5)
+	gg.editAll('255', gg.TYPE_FLOAT)
+	gg.clearResults()
+	desativado()
+end
+
+function tempo()
+	menu = gg.choice({'ᴅɪᴀ','ɴᴏɪᴛᴇ','ᴠᴏʟᴛᴀʀ'})
+	if menu == 1 then tempoDia()
+	elseif menu == 2 then tempoNoite()
+	elseif menu == 3 then START()
+	end
+end
+
+function tempoDia()
+	pesquisar(gg.REGION_C_ALLOC, '288233954919789363', gg.TYPE_QWORD, '288233954919789363', gg.TYPE_QWORD)
+	local R = gg.getResults(4)
+	BaseMenos(R, 0x1E0, '0', gg.TYPE_FLOAT, true)
+end
+
+function tempoNoite()
+	pesquisar(gg.REGION_C_ALLOC, '288233954919789363', gg.TYPE_QWORD, '288233954919789363', gg.TYPE_QWORD)
+	local R = gg.getResults(4)
+	BaseMenos(R, 0x1E0, '0', gg.TYPE_FLOAT, true)
+end
+-- BASE
+function BaseMais(result, offset, valor, flagss, congelar)
+	if #result > 0 then
+	for i, v in ipairs(result) do
+		v.address = v.address + offset
+        v.value = valor
+        v.flags = flagss
+        v.freeze = congelar or false
+    end
+	    gg.addListItems(result)
+	    gg.getListItems()
+		gg.clearResults()
+		gg.clearList()
+	else
+		ERRO()
+	end
+end
+
+function BaseMenos(result, offset, valor, flagss, congelar)
+	if #result > 0 then
+	for i, v in ipairs(result) do
+		v.address = v.address - offset
+        v.value = valor
+        v.flags = flagss
+        v.freeze = congelar or false
+    end
+	    gg.addListItems(result)
+	    gg.getListItems()
+		gg.clearResults()
+		gg.clearList()
+	else
+		ERRO()
+	end
+end
+
+function pesquisar(region, search, typeS, refine, typeR)
+	gg.setRanges(region)
+	gg.searchNumber(search, typeS)
+	gg.refineNumber(refine, typeR)
+	--gg.getResults(result)
+end
+
+function ERRO()
+	gg.alert('⚠️ Nenhum resultado encontrado. Se o problema persistir, me envie uma mensagem informando qual opção você tentou ativar.')
+		gg.toast('ERROR ❌')
+end
+
+function edit(digit, nada, texto)
+	local prompt1 = gg.prompt(digit, nada, texto)
+	if prompt1 == nil then gg.alert('Erro') end
+end
+
+function ativado()
+	gg.toast('ON ✅')
+end
+
+function desativado()
+	gg.toast('OFF ❌')
+end
+
+while true do
+	if gg.isVisible(true) then
+		gg.setVisible(false)
+		START()
+	end
+end
