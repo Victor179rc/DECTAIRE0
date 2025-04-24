@@ -1,3 +1,5 @@
 local Alerta = [[
-Script indisponível]]
+Recentemente, descobri que alguém encontrou uma maneira de acessar o código do meu script e está vazando-o por aí. No entanto, isso não me incomoda tanto, pois o código afeta apenas os mobs do jogo e não interfere na jogabilidade dos jogadores no PvP.
+
+Contudo, se eu descobrir quem está vazando o código, pagarei ao Mox para deletar permanentemente a conta dessa pessoa no servidor da TurboRocket. Portanto, se você tem acesso ao código, evite compartilhá-lo com outras pessoas se não quiser ter sua conta apagada.]]
 gg.alert(Alerta)
