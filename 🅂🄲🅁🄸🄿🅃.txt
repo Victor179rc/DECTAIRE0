@@ -5,13 +5,17 @@ NOVO UPDATE! #3.1 | 2025/04/20
 
 - Nova opção de personalização de bordas
 
-Compre gemas, kills, chaves etc.👇
-- Instagram: @v1ct0r_w.c]]
-local url = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
-local New = gg.alert(u,'Ok','Copiar link')
-	if New == 1 then gg.hideUiButton() end
-	if New == 2 then gg.copyText(url) gg.alert('Cole o link no navegador') end
+Olá, pessoal!
+Ultimamente, estou muito ocupado com as atividades que faço no WildCraft, e isso tem tomado bastante do meu tempo. Com isso, quase não estou conseguindo dedicar tempo à minha família.
+Por esse motivo, vou ficar um tempo offline.
+Mas fiquem tranquilos em relação ao script que fiz para vocês uparem: ele continuará online no servidor, apenas não receberá atualizações durante esse período.
+Enfim, é isso. Desejo boa sorte a todos e quero que saibam que estou bem e feliz — só preciso de um momento longe do celular e da internet.
 
+Obrigado pela compreensão!]]
+local url = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
+local New = gg.alert(u)
+--	if New == 1 then gg.hideUiButton() end
+--	if New == 2 then gg.copyText(url) gg.alert('Cole o link no navegador') end
 local borda = {'☠ ',' ☠'}
 
 function personalizar()
