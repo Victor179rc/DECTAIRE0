@@ -1,22 +1,20 @@
 -- ᣃ☠☠ᣄ
 
-local u = [[
-NOVO UPDATE! #3.1 | 2025/04/20
+local u = [[▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+SCRIPT VERSÃO #3.2 | 2025/04/30
+- Nova interface
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-- Nova opção de personalização de bordas
-
-Olá, pessoal!
-Ultimamente, estou muito ocupado com as atividades que faço no WildCraft, e isso tem tomado bastante do meu tempo. Com isso, quase não estou conseguindo dedicar tempo à minha família.
-Por esse motivo, vou ficar um tempo offline.
-Mas fiquem tranquilos em relação ao script que fiz para vocês uparem: ele continuará online no servidor, apenas não receberá atualizações durante esse período.
-Enfim, é isso. Desejo boa sorte a todos e quero que saibam que estou bem e feliz — só preciso de um momento longe do celular e da internet.
-
-Obrigado pela compreensão!]]
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Compre gemas, kills, Levels etc. 👇
+- Instagram: @v1ct0r_w.c
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄]]
 local url = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
-local New = gg.alert(u)
---	if New == 1 then gg.hideUiButton() end
---	if New == 2 then gg.copyText(url) gg.alert('Cole o link no navegador') end
-local borda = {'☠ ',' ☠'}
+local New = gg.alert(u, "Ok", "Copiar url")
+	if New == 1 then gg.hideUiButton() end
+	if New == 2 then gg.copyText(url) gg.alert('Cole o link no navegador') end
+
+local borda = {'༺࿈ ',' ࿈༻'}
 
 function personalizar()
 	local input = gg.prompt({'Borda Esquerda:', 'Borda direita:'}, {borda[1], borda[2]}, {'text', 'text'})
@@ -29,6 +27,10 @@ function personalizar()
 end
 gg.clearResults()
 gg.clearList()
+local credit = [[
+╭━─━───━─≪ ༺࿈ 亗 ࿈༻ ≫─━────━─━╮
+                   Script criado por: @v1ct0r_w.c
+╰━─━───━─≪ ༺࿈ 亗 ࿈༻ ≫────━─━─━╯]]
 function START()
     menu = gg.choice({
 		borda[1]..'ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ'..borda[2],
@@ -37,9 +39,9 @@ function START()
 		borda[1]..'sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ'..borda[2],
 		borda[1]..'sᴘᴇᴇᴅ ɢʟᴏʙᴀʟ'..borda[2],
 		borda[1]..'ᴍᴜɴᴅᴏ ʀɢʙ'..borda[2],
-		borda[1]..'ᴘᴇʀsᴏɴᴀʟɪᴢᴀʀ ʙᴏʀᴅᴀs'..borda[2],
+		borda[1]..'ᴘᴇʀsᴏɴᴀʟɪᴢᴀʀ'..borda[2],
 		borda[1]..'sᴀɪʀ'..borda[2]
-	}, nil, '#3.1 | Script criado por: @v1ct0r_w.c')
+	}, nil, credit)
 	
 	if menu == 1 then imortalPve()
 	elseif menu == 2 then wallHack()
