@@ -27,8 +27,7 @@ function personalizar()
 end
 gg.clearResults()
 gg.clearList()
-local credit = [[
-╭━─━───━─≪ ༺࿈ 亗 ࿈༻ ≫─━────━─━╮
+local credit = [[╭━─━───━─≪ ༺࿈ 亗 ࿈༻ ≫─━────━─━╮
                    Script criado por: @v1ct0r_w.c
 ╰━─━───━─≪ ༺࿈ 亗 ࿈༻ ≫────━─━─━╯]]
 function START()
