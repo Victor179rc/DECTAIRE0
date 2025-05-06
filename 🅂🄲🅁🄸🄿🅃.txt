@@ -6,8 +6,8 @@ SCRIPT VERSÃO #3.2 | 2025/04/30
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-Compre gemas, kills, Levels etc. 👇
-- Instagram: @v1ct0r_w.c
+Instagram: @v1ct0r_w.c
+Discord: viking_fk
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄]]
 local url = 'https://www.instagram.com/v1ct0r_w.c?igsh=MW5jMTltaXF6emgxZQ=='
 local New = gg.alert(u, "Ok", "Copiar url")
