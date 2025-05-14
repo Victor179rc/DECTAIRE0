@@ -188,11 +188,13 @@ function rgb()
 end
 
 function rgbOn()
+gg.setRanges(gg.REGION_CODE_APP)
 	BaseMais("128F;255F", F, "255", F, 10, 0x0, "9,999,777", F, true)
 	on()
 end
 
 function rgbOff()
+gg.setRanges(gg.REGION_CODE_APP)
 	BaseMais("9,999,777", F, "9,999,777", F, 10, 0x0, "255", F, true)
 	off()
 end
