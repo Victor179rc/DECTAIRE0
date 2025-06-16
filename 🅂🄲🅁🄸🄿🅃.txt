@@ -1,1 +1,277 @@
-gg.alert("Essa script não esta mais disponível.")
+--BaseMenoss("Pesquisa", D, "Refina", D, 1, 0x0, Valor, D, true) 
+
+local u ='▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\nSCRIPT VERSÃO #4.1 | 2025/06/16\n-  Opção "ᴡᴀʟʟʜᴀᴄᴋ" e "sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ" bloqueada\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\nInstagram: @v1ct0r_w.c\nDiscord: @viking_fk\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄'
+local New = gg.alert(u)
+
+local borda = {"༺࿈ "," ࿈༻"}
+
+function personalizar()
+	local input = gg.prompt({"Borda Esquerda:", "Borda direita:"}, {borda[1], borda[2]}, {"text", "text"})
+	if input == nil then
+		gg.toast("Cancelado")
+	else
+		borda = {input[1].." "," "..input[2]}
+	end
+	START()
+end
+gg.clearResults()
+gg.clearList()
+local credit = "༺࿈亗| Script criado por: @v1ct0r_w.c |亗࿈༻"
+
+function START()
+	gg.setRanges(gg.REGION_C_ALLOC)
+    local menu = gg.choice({
+		borda[1].."ɪᴍᴏʀᴛᴀʟ ᴘᴠᴇ"..borda[2],
+		borda[1].."ᴡᴀʟʟʜᴀᴄᴋ"..borda[2],
+		borda[1].."ᴘᴜʟᴀʀ ᴛᴇᴍᴘᴏ"..borda[2],
+		borda[1].."sᴘᴇᴇᴅ ᴄᴏʀʀᴇʀ"..borda[2],
+		borda[1].."sᴘᴇᴇᴅ ɢʟᴏʙᴀʟ"..borda[2],
+		borda[1].."ᴍᴜɴᴅᴏ ʀɢʙ"..borda[2],
+		borda[1].."ᴅᴀʀᴋ ᴡᴏʀʟᴅ"..borda[2],
+		borda[1].."ᴘᴇʀsᴏɴᴀʟɪᴢᴀʀ"..borda[2],
+		borda[1].."sᴀɪʀ"..borda[2]
+	}, nil, credit)
+	
+	if menu == 1 then imortalPve()
+	elseif menu == 2 then gg.alert("🔒Opção bloqueada.") START()
+	elseif menu == 3 then pularTempo()
+	elseif menu == 4 then gg.alert("🔒Opção bloqueada.") START()
+	elseif menu == 5 then speedGlobal()
+	elseif menu == 6 then rgb()
+	elseif menu == 7 then darkWorld()
+	elseif menu == 8 then personalizar()
+	elseif menu == 9 then os.exit()
+	elseif menu == nil then gg.hideUiButton()
+	end
+end
+
+local D = gg.TYPE_DWORD
+local F = gg.TYPE_FLOAT
+local Q = gg.TYPE_QWORD
+local sN = gg.searchNumber
+local rN = gg.refineNumber
+local gR = gg.getResults
+local editAll = gg.editAll
+local toast = gg.toast
+
+function imortalPve()
+	local menu = gg.choice({"ᴏɴ","ᴏғғ","ᴠᴏʟᴛᴀʀ"}, nil, "Essa função funciona somente contra Mobs")
+	if menu == 1 then imortalPveOn()
+	elseif menu == 2 then imortalPveOff()
+	elseif menu == 3 then START()
+	end
+end
+
+function imortalPveOn()
+	gg.setRanges(gg.REGION_C_ALLOC)
+	gg.searchNumber("2.40000009537",F)
+	gg.refineAddress("F0", -1, F, gg.SIGN_EQUAL, 0, -1, 0)
+	local R = gg.getResults(20)
+	if #R > 0 then
+	    for i, v in ipairs(R) do
+	        v.address = v.address + 0x120
+	        v.value = -999
+	        v.flags = F
+	        v.freeze = true
+	    end
+		    gg.addListItems(R)
+		    gg.getListItems(100)
+			gg.clearResults()
+			gg.clearList()
+	else
+		gg.alert("⚠️ Nenhum resultado encontrado. Se o problema persistir, me envie uma mensagem informando qual opção você tentou ativar.")
+	end
+	on()
+end
+
+function imortalPveOff()
+	gg.setRanges(gg.REGION_C_ALLOC)
+	gg.searchNumber("2.40000009537",F)
+	gg.refineAddress("F0", -1, F, gg.SIGN_EQUAL, 0, -1, 0)
+	local R = gg.getResults(20)
+	if #R > 0 then
+	    for i, v in ipairs(R) do
+	        v.address = v.address + 0x120
+	        v.value = 1.2
+	        v.flags = F
+	        v.freeze = true
+	    end
+		    gg.addListItems(R)
+		    gg.getListItems(100)
+			gg.clearResults()
+			gg.clearList()
+	else
+		gg.alert("⚠️ Nenhum resultado encontrado. Se o problema persistir, me envie uma mensagem informando qual opção você tentou ativar.")
+	end
+	off()
+end
+
+function wallHack()
+	local menu = gg.choice({"ᴏɴ","ᴏғғ","ᴠᴏʟᴛᴀʀ"})
+	if menu == 1 then wallhackOn()
+	elseif menu == 2 then wallhackOff()
+	elseif menu == 3 then START()
+	end
+end
+
+function wallhackOn()
+	BaseMais("-1,549,174,190", D, "-1,549,174,190", D, 10, 0x8, "0", Q, true)
+	on()
+end
+
+function wallhackOff()
+	BaseMais("-1,549,174,190", D, "-1,549,174,190", D, 10, 0x8, "7,813,537,966,696,955,904", Q, true)
+	off()
+end
+
+function pularTempo()
+	local menu = gg.choice({"1h","5h","12h","24h","ᴇᴅɪᴛᴀʀ","ᴠᴏʟᴛᴀʀ"}, nil, "Use essa função para pular o tempo das missões do jogo")
+	if menu == 1 then gg.timeJump(3600)
+	elseif menu == 2 then gg.timeJump(18000)
+	elseif menu == 3 then gg.timeJump(43200)
+	elseif menu == 4 then gg.timeJump(86400)
+	elseif menu == 5 then 
+		edit = gg.prompt({"⏰Os valores são medidos por segundos. Exemplo: 1 hora = 3600 segundos"}, {3600}, {"number"})
+		if edit and edit[1] and tonumber(edit[1]) then
+			gg.timeJump(tonumber(edit[1]))
+		else
+			gg.alert("Entrada inválida! Insira um número valido.")
+			pularTempo()
+		end
+	elseif menu == 6 then START()
+	end
+end
+
+function speedCorrer()
+	local menu = gg.choice({"ᴏɴ","ᴏғғ","ᴇᴅɪᴛᴀʀ","ᴠᴏʟᴛᴀʀ"}, nil, nil)
+	if menu == 1 then speedCorrerOn()
+	elseif menu == 2 then speedCorrerOff()
+	elseif menu == 3 then speedCorrerEdit()
+	elseif menu == 4 then START()
+	end
+end
+
+function speedCorrerOn()
+	BaseMenos("1.89999997616F;3.79999995232F:17",F, "1.89999997616", F, 10, 0xC0, 999.01, F, true)
+	on()
+end
+
+function speedCorrerOff()
+	BaseMenos("1.89999997616F;3.79999995232F:17",F, "1.89999997616",F, 10, 0xC0, 1.5, F, true)
+	off()
+end
+
+local speed = 1
+function speedCorrerEdit()
+	input = gg.prompt({"Para de usar speed na arena seu fraco 😂"}, {speed}, {"number"})
+	if input and input[1] and tonumber(input[1]) then
+		speed = tonumber(input[1])
+		BaseMenos("1.89999997616F;3.79999995232F:17",F, "1.89999997616",F, 10, 0xC0, speed + 0.01, F, true)
+	else
+		gg.alert("Entrada inválida! Insira um número valido.")
+		speedCorrer()
+	end
+end
+
+function speedGlobal()
+	local menu = gg.choice({"1x","5x","10x","50x","ᴠᴏʟᴛᴀʀ"}, nil, "10x e 50x pode causar bug ao sair do mapa")
+	if menu == 1 then gg.setSpeed(1)
+	elseif menu == 2 then gg.setSpeed(5)
+	elseif menu == 3 then gg.setSpeed(10)
+	elseif menu == 4 then gg.setSpeed(50)
+	elseif menu == 5 then START()
+	end
+end
+
+function rgb()
+	local menu = gg.choice({"ᴏɴ","ᴏғғ","ᴠᴏʟᴛᴀʀ"})
+	if menu == 1 then rgbOn()
+	elseif menu == 2 then rgbOff()
+	elseif menu == 3 then START()
+	end
+end
+
+function rgbOn()
+	gg.setRanges(gg.REGION_CODE_APP)
+	BaseMais("128F;255F", F, "255", F, 10, 0x0, "9,999,777", F, true)
+	on()
+end
+
+function rgbOff()
+	gg.setRanges(gg.REGION_CODE_APP)
+	BaseMais("9,999,777", F, "9,999,777", F, 10, 0x0, "255", F, true)
+	off()
+end
+
+local saturacao = 1
+function darkWorld()
+	local input = gg.prompt({"Recomendo: 0,5"}, {saturacao}, {"number"})
+	if input and input[1] and tonumber(input[1]) then
+		saturacao = tonumber(input[1])
+		BaseMenos("1,038,147,283", D, "1,038,147,283", D, 10, 0xC, saturacao + 0.01, F, true)
+	else
+		gg.alert("Entrada inválida. Insira um número válido")
+		START()
+	end
+end
+-- BASE
+function BaseMais(pesquisa, sType, refinar, rType, resultados, offset, valor, flagss, congelar)
+	sN(pesquisa, sType)
+	rN(refinar, rType)
+	local R = gg.getResults(resultados)
+	if #R > 0 then
+    for i, v in ipairs(R) do
+        v.address = v.address + offset
+        v.value = valor
+        v.flags = flagss
+        v.freeze = congelar or false
+    end
+	    gg.addListItems(R)
+	    gg.getListItems(100)
+		gg.clearResults()
+		gg.clearList()
+	else
+		gg.alert("⚠️ Nenhum resultado encontrado. Se o problema persistir, me envie uma mensagem informando qual opção você tentou ativar.")
+	end
+end
+
+function BaseMenos(pesquisa, sType, refinar, rType, resultados, offset, valor, flagss, congelar)
+	sN(pesquisa, sType)
+	rN(refinar, rType)
+	local R = gg.getResults(resultados)
+	if #R > 0 then
+    for i, v in ipairs(R) do
+        v.address = v.address - offset
+        v.value = valor
+        v.flags = flagss
+        v.freeze = congelar or false
+    end
+	    gg.addListItems(R)
+	    gg.getListItems(100)
+		gg.clearResults()
+		gg.clearList()
+	else
+		gg.alert("⚠️ Nenhum resultado encontrado. Se o problema persistir, me envie uma mensagem informando qual opção você tentou ativar.")
+	end
+end
+
+function pesquisar(region, search, typeS, refine, typeR)
+	gg.setRanges(region)
+	gg.searchNumber(search, typeS)
+	gg.refineNumber(refine, typeR)
+end
+
+function on()
+	gg.toast("ON ✅")
+end
+
+function off()
+	gg.toast("OFF ❌")
+end
+
+while true do
+	if gg.isVisible(true) then
+		gg.setVisible(false)
+		START()
+	end
+end
