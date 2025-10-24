@@ -132,7 +132,8 @@ end
 
 local sair = 0
 
-local New = gg.alert("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\nSCRIPT VERSÃO #5.0 | 2025/09/15\nAlgoritmos de identificação adicionado nas opções. Agora não é mais necessário ficar clicando em ON/OFF \n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\nInstagram: @v1ct0r_w.c\nDiscord: @viking_fk\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄", "Ok")
+local New = gg.alert("⚠️ Atenção ⚠️\n\nDevido a alguns relatos de banimento de contas, o script ficará indisponível temporariamente.\n\nSe você estiver jogando WildCraft em um ambiente virtual (KGO, Parallel space...), recomendo que você baixe os dados de sua conta no celular normal e apague o WildCraft do ambiente virtual.")
+os.exit()
 
 gg.clearResults()
 gg.clearList()
