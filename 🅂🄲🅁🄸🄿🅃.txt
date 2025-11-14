@@ -130,10 +130,9 @@ function OffsetToValue(resultados, offset, tipo, valor, congelar)
 end
 
 
-local sair = 0
+local sair = false
 
-local New = gg.alert("⚠️ Atenção ⚠️\n\nDevido a alguns relatos de banimento de contas, o script ficará indisponível temporariamente.\n\nSe você estiver jogando WildCraft em um ambiente virtual (KGO, Parallel space...), recomendo que você baixe os dados de sua conta no celular normal e apague o WildCraft do ambiente virtual.")
-os.exit()
+local New = gg.alert("▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\nSCRIPT VERSÃO #5.0 | 2025/09/15\nAlgoritmos de identificação adicionado nas opções. Agora não é mais necessário ficar clicando em ON/OFF \n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄\n▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\nInstagram: @v1ct0r_w.c\nDiscord: @viking_fk\n▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄", "Ok")
 
 gg.clearResults()
 gg.clearList()
@@ -169,20 +168,15 @@ function START()
 	elseif menu == 4 then rgb()
 	elseif menu == 5 then darkWorld()
 	elseif menu == 6 then personalizar()
-	elseif menu == 7 then sair = 1
+	elseif menu == 7 then sair = true
 	elseif menu == nil then gg.hideUiButton()
 	end
 end
 
-while true do
+while sair == false do
     if gg.isVisible(true) then
         gg.setVisible(false)
         START()
-    end
-    
-    if sair == 1 then
-        print("Script finalizado.")
-        break
     end
     gg.sleep(100)
 end
